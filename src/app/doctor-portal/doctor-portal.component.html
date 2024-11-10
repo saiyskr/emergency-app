@@ -1,0 +1,33 @@
+<div class="doctor-portal-container" style="padding: 20px;">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Doctor Portal</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>Emergency Alerts</h3>
+
+      <!-- Display emergency alerts -->
+      <div *ngFor="let emergency of emergencies; trackBy: trackByEmergency" class="emergency-item mat-elevation-z2 mb-3">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ emergency.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p><strong>Phone:</strong> {{ emergency.phone }}</p>
+            <p><strong>Location:</strong> {{ emergency.location }}</p>
+            <button mat-raised-button color="primary" (click)="videoCall(emergency)">
+              Answer Video Call
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- Availability toggle -->
+      <mat-checkbox [(ngModel)]="isAvailable" (change)="toggleAvailability()">
+        Mark yourself as available for video calls
+      </mat-checkbox>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,41 @@
+<!-- src/app/patient-emergency/patient-emergency.component.html -->
+<div class="container mt-5">
+    <h1 class="centered-title"> Emergency Alert System</h1>
+    <mat-card>
+      <!-- <mat-card-title>Enter your details</mat-card-title> -->
+      <mat-card-content>
+        <form>
+          <!-- Name Field -->
+          <div class="form-row mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Enter your name" [(ngModel)]="name" name="name">
+            </mat-form-field>
+          </div>
+  
+          <!-- Phone Field -->
+          <div class="form-row mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="Enter your phone number" [(ngModel)]="phone" name="phone">
+            </mat-form-field>
+          </div>
+  
+          <!-- Location Field -->
+          <div class="form-row mb-3">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Location</mat-label>
+              <input matInput placeholder="Enter your location" [(ngModel)]="location" name="location">
+            </mat-form-field>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="button-container d-flex justify-content-between">
+            <button mat-raised-button color="primary" (click)="sendNotification()">Send Notification</button>
+            <button mat-raised-button color="accent" (click)="videoCall()">Video Call</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
